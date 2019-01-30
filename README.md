@@ -123,20 +123,19 @@ npm install
 
 ### Scripts
 
-#### *start*
+#### *livereload*
 
 Runs the app in development mode.
 
 Usage:
 
 ```bash
-npm run start
+npm run livereload
 ```
 
 Parameters:
 
  - `--debug` Start with development tools
- - `--livereload` Start with live reload
 
 
 #### *localsetup*
@@ -201,7 +200,7 @@ sudo apt-get install wine mono fakeroot dpkg
 
 The CI deployment is managed by a custom layer of node scripts and Electron-optimized configuration templates.
 Completed Installation packages are deployed to [GitHub Releases](https://github.com/sidneys/pb-for-desktop/masters). Builds for all platforms and architectures take about 5 minutes.
-Backed by the open-source-friendly guys at [Travis](http://travis-ci.org/) and AppVeyor](https://ci.appveyor.com/) and running [electron-packager](https://github.com/electron-userland/electron-packager) under the hood.
+Backed by the open-source-friendly guys at [Travis](http://travis-ci.org/) and [AppVeyor](https://ci.appveyor.com/) and running [electron-packager](https://github.com/electron-userland/electron-packager) under the hood.
 
 ### Setup
 
@@ -242,7 +241,7 @@ Backed by the open-source-friendly guys at [Travis](http://travis-ci.org/) and A
 Read the [contribution documentation](https://github.com/sidneys/pb-for-desktop/blob/master/CONTRIBUTING.md) first.
 
 - [Dev Chat](http://gitter.im/sidneys/pb-for-desktop): Talk about features and suggestions.
-- [Issues](http;//github.com/sidneys/pb-for-desktop/issues) File bugs and document issues.
+- [Issues](http://github.com/sidneys/pb-for-desktop/issues) File bugs and document issues.
 
 
 ## <a name="license"/></a> License
