@@ -15,7 +15,7 @@ const path = require('path');
  * @constant
  */
 const electron = require('electron');
-const { app } = electron;
+const { app, BrowserWindow, ipcMain, Menu, session, Tray } = electron;
 
 /**
  * Modules
@@ -23,6 +23,22 @@ const { app } = electron;
  * @constant
  */
 const appRootPath = require('app-root-path');
+
+var shouldQuit = app.makeSingleInstance(function(commandLine, workingDirectory) {
+    // Someone tried to run a second instance, we should focus our window
+    let mainWindow = BrowserWindow.getAllWindows()[0];
+    if (mainWindow) {
+        if (!mainWindow.isVisible()) mainWindow.show();
+        if (mainWindow.isMinimized()) mainWindow.restore();
+        mainWindow.focus();
+    }
+    return true;
+});
+
+if (shouldQuit) {
+  app.quit();
+  return;
+}
 
 /**
  * Modules

@@ -286,16 +286,14 @@ class TrayMenu extends Tray {
         this.on('click', () => {
             logger.debug('TrayMenu#click');
 
-            if (platformHelper.isWindows) {
-                let mainWindow = BrowserWindow.getAllWindows()[0];
+            let mainWindow = BrowserWindow.getAllWindows()[0];
 
-                if (!mainWindow) { return; }
+            if (!mainWindow) { return; }
 
-                if (mainWindow.isVisible()) {
-                    mainWindow.hide();
-                } else {
-                    mainWindow.show();
-                }
+            if (mainWindow.isVisible()) {
+                mainWindow.hide();
+            } else {
+                mainWindow.show();
             }
         });
     }

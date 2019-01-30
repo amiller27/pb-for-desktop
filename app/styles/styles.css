@@ -347,7 +347,7 @@ html.darwin webview {
     position: absolute;
 }
 
-html:not('.darwin') .titlebar {
+html:not(.darwin) .titlebar {
     display: none;
 }
 

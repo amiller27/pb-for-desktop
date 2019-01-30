@@ -62,13 +62,16 @@ const defaultOptions = {
  */
 let showNotification = (title, options) => {
     logger.debug('showNotification');
+    logger.info(`Showing notification with title (${title}) and options ${options}`);
 
     if (!_.isString(title)) { return; }
 
     const notificationTitle = _.trim(title);
     const notificationOptions = JSON.stringify(_.defaultsDeep(options, defaultOptions));
 
-    const code = `new Notification('${notificationTitle}', ${notificationOptions});`;
+    const code = `var notification = new Notification('${notificationTitle}', ${notificationOptions});
+                  notification.addEventListener('click', function() {})
+                 `;
 
     if (webContents.getAllWebContents().length === 0) {
         logger.warn('could not show notification', 'no webcontents available');
